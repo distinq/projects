@@ -25,7 +25,6 @@ def check(hand):
     list = [red, green, blue]
 
     # The color variable contains the name of the color, and the number of stones
-    correct = True
     for color in list:
         try: # Check if the color is in the bag
             color[2]
@@ -33,10 +32,8 @@ def check(hand):
             continue
 
         if int(color[1]) > bag[color[2]]: # Check to see if the value in hand does not exceed bag
-            correct = False
-        else:
-            continue
-    return correct
+            return False
+    return True
 
 # This function divides each game into a gamenumber and the seperate hands within the game.
 def game(line):
