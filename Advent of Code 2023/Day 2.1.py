@@ -48,9 +48,7 @@ def game(line):
 
     # The check is performed per hand
     for hand in hands:
-        if check(hand):
-            continue
-        else:
+        if not check(hand):
             return 0
     return gameNoInt
 
