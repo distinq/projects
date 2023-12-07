@@ -40,7 +40,6 @@ def check(hand):
 
 # This function divides each game into a gamenumber and the seperate hands within the game.
 def game(line):
-    fail = 0
     # Check what game it is, split the string into the gamenumber and games
     gamesplit = line.split(':')
     gameNo = re.search("Game (\d+)", gamesplit[0])
@@ -50,14 +49,10 @@ def game(line):
     # The check is performed per hand
     for hand in hands:
         if check(hand):
-            fail += 0
+            continue
         else:
-            fail += 1
-    # Decide what the result of the game is
-    if fail == 0:
-        return gameNoInt
-    else:
-        return 0
+            return 0
+    return gameNoInt
 
 
 # The input file is opened
